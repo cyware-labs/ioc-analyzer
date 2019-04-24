@@ -1,5 +1,5 @@
 import time
-
+import json
 import ipaddr
 import requests
 import os
@@ -85,7 +85,14 @@ class Shodan:
 
 
 def get_shodan_data(args):
+    keys = None
+    with open('api_keys.json', 'r') as f:
+        keys = f.read()
+    access_key = None
+    if keys:
+        dict_data = json.load(keys)
+        access_key = dict_data["SHODAN_ACCESS_KEY"]
     base_url = "https://api.shodan.io"
-    access_key = os.environ.get("SHODAN_ACCESS_KEY")
+    access_key = access_key or os.environ.get("SHODAN_ACCESS_KEY")
     shodan = Shodan(base_url, access_key, None).execute_shodan_query(args)
     return shodan(args.query) if shodan else None

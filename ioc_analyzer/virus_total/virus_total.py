@@ -1,5 +1,5 @@
 import time
-
+import json
 import ipaddr
 import requests
 import os
@@ -185,7 +185,14 @@ class VirusTotal:
 
 
 def get_virus_total_data(args):
+    keys = None
+    with open('api_keys.json', 'r') as f:
+        keys = f.read()
+    access_key = None
+    if keys:
+        dict_data = json.load(keys)
+        access_key = dict_data["VIRUS_TOTAL_KEY"]
     base_url = "https://www.virustotal.com/vtapi/v2/"
-    access_key = os.environ.get('VIRUS_TOTAL_KEY')
+    access_key = access_key or os.environ.get('VIRUS_TOTAL_KEY')
     virus_total = VirusTotal(base_url, access_key, None).execute_query(args)
     return virus_total(args.query) if virus_total else None
