@@ -1,2 +1,5 @@
 venv/
 .idea/
+EVV/
+dist/
+FirstCommand.egg-info
