@@ -4,7 +4,6 @@ requirement = [
     '''
     certifi==2019.3.9
     chardet==3.0.4
-    FirstCommand==0.1
     idna==2.8
     ipaddr==2.2.0
     requests==2.21.0
