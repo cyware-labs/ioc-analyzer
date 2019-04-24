@@ -46,6 +46,14 @@ def ioc_analyzer():
         default=False,
         help="Search query in all tools"
     )
+    parser.add_argument(
+        '-a',
+        '--alienvault_otx',
+        action='store_true',
+        dest='alienvault_otx',
+        default=False,
+        help="Search query in alienvault OTX"
+    )
 
     args = parser.parse_args()
     pprint(IOCFactory(args).run_command())
