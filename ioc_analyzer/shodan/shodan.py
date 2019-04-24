@@ -90,7 +90,7 @@ def get_shodan_data(args):
         keys = f.read()
     access_key = None
     if keys:
-        dict_data = json.load(keys)
+        dict_data = json.loads(keys)
         access_key = dict_data["SHODAN_ACCESS_KEY"]
     base_url = "https://api.shodan.io"
     access_key = access_key or os.environ.get("SHODAN_ACCESS_KEY")

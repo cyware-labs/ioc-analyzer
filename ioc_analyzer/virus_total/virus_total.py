@@ -190,7 +190,7 @@ def get_virus_total_data(args):
         keys = f.read()
     access_key = None
     if keys:
-        dict_data = json.load(keys)
+        dict_data = json.loads(keys)
         access_key = dict_data["VIRUS_TOTAL_KEY"]
     base_url = "https://www.virustotal.com/vtapi/v2/"
     access_key = access_key or os.environ.get('VIRUS_TOTAL_KEY')

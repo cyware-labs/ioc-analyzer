@@ -1,4 +1,5 @@
 {
   "VIRUS_TOTAL_KEY": null,
-  "SHODAN_ACCESS_KEY": null
+  "SHODAN_ACCESS_KEY": null,
+  "ALIENVAULT_OTX_KEY": null
 }
