@@ -8,6 +8,8 @@
 pip install -e git+https://github.com/cyware-labs/ioc-analyzer.git#egg=ioc-analyzer
 ```
 
+## Usage
+
 Domain Search (only whois)
 ```
 ioc_analyzer <domain_name> -w --type=domain
@@ -38,5 +40,5 @@ For further help
 ioc_analyzer --help
 ```
 
-##Contact Us
+## Contact Us
 Cyware Labs (https://cyware.com)
