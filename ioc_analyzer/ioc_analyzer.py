@@ -54,6 +54,14 @@ def ioc_analyzer():
         default=False,
         help="Search query in alienvault OTX"
     )
+    parser.add_argument(
+        '-c',
+        '--cymon',
+        action='store_true',
+        dest='cymon',
+        default=False,
+        help="Search query in Cymon"
+    )
 
     args = parser.parse_args()
     pprint(IOCFactory(args).run_command())

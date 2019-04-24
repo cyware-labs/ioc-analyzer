@@ -2,6 +2,7 @@ from ioc_analyzer.py_whois.whois import get_whois_data
 from ioc_analyzer.shodan.shodan import get_shodan_data
 from ioc_analyzer.virus_total.virus_total import get_virus_total_data
 from ioc_analyzer.alienvault_otx.alienvault_otx import get_alienvault_otx_data
+from ioc_analyzer.cymon.cymon import get_cymon_data
 
 
 class IOCFactory(object):
@@ -14,7 +15,8 @@ class IOCFactory(object):
             ('whois', True): get_whois_data,
             ('shodan', True): get_shodan_data,
             ('virus_total', True): get_virus_total_data,
-            ('alienvault_otx', True): get_alienvault_otx_data
+            ('alienvault_otx', True): get_alienvault_otx_data,
+            ('cymon', True): get_cymon_data
         }
         return command_mapping
 
